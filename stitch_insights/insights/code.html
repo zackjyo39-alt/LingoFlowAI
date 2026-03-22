@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#e4e1ee",
+              "on-primary-fixed": "#0f0069",
+              "surface-container-high": "#eae6f4",
+              "tertiary": "#684000",
+              "outline": "#777587",
+              "surface-tint": "#4d44e3",
+              "primary": "#3525cd",
+              "inverse-on-surface": "#f3effc",
+              "on-primary": "#ffffff",
+              "surface-container-highest": "#e4e1ee",
+              "background": "#fcf8ff",
+              "surface-container-low": "#f5f2ff",
+              "on-primary-fixed-variant": "#3323cc",
+              "tertiary-container": "#885500",
+              "on-tertiary-fixed": "#2a1700",
+              "surface": "#fcf8ff",
+              "primary-fixed": "#e2dfff",
+              "on-primary-container": "#dad7ff",
+              "on-secondary-fixed-variant": "#005047",
+              "primary-container": "#4f46e5",
+              "on-secondary-fixed": "#00201c",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#c3c0ff",
+              "on-tertiary": "#ffffff",
+              "inverse-surface": "#302f39",
+              "on-secondary": "#ffffff",
+              "on-surface-variant": "#464555",
+              "on-background": "#1b1b24",
+              "on-tertiary-container": "#ffd4a4",
+              "secondary-container": "#62fae3",
+              "secondary-fixed-dim": "#3cddc7",
+              "secondary": "#006b5f",
+              "on-error-container": "#93000a",
+              "outline-variant": "#c7c4d8",
+              "primary-fixed-dim": "#c3c0ff",
+              "surface-container": "#f0ecf9",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#007165",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#ffddb8",
+              "tertiary-fixed-dim": "#ffb95f",
+              "on-tertiary-fixed-variant": "#653e00",
+              "secondary-fixed": "#62fae3",
+              "surface-bright": "#fcf8ff",
+              "error": "#ba1a1a",
+              "on-surface": "#1b1b24",
+              "surface-dim": "#dcd8e5"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(24px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="bg-[#fcf8ff] flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<h1 class="font-['Plus_Jakarta_Sans'] font-black text-xl text-[#3525cd] tracking-tight">The Atelier</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#3525cd] hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-5xl mx-auto space-y-12">
+<!-- Hero: Proficiency Overview -->
+<section class="relative">
+<div class="flex flex-col md:flex-row gap-8 items-end justify-between mb-8">
+<div class="space-y-2">
+<span class="font-label text-label-md uppercase tracking-wider text-primary font-bold">Performance Dashboard</span>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight">Your English Mastery</h2>
+</div>
+<div class="bg-surface-container-lowest px-6 py-4 rounded-3xl flex items-center gap-4">
+<div class="text-right">
+<p class="text-sm text-on-surface-variant">Global Rank</p>
+<p class="font-headline text-2xl font-bold text-primary">Top 12%</p>
+</div>
+<div class="w-[2px] h-10 bg-outline-variant/20"></div>
+<div class="text-right">
+<p class="text-sm text-on-surface-variant">Level</p>
+<p class="font-headline text-2xl font-bold text-secondary">C1 Advanced</p>
+</div>
+</div>
+</div>
+<!-- Bento Grid of Proficiency -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Main Chart Area -->
+<div class="md:col-span-2 bg-surface-container-low p-8 rounded-3xl flex flex-col justify-between min-h-[320px]">
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-xl font-bold">Proficiency Score</h3>
+<span class="text-xs font-label bg-primary/10 text-primary px-3 py-1 rounded-full">+4.2% this month</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-7xl font-bold tracking-tighter text-primary">84</span>
+<span class="text-xl font-headline font-semibold text-on-surface-variant">/100</span>
+</div>
+<!-- Simplified Visual Representation of Radar/Bar Chart -->
+<div class="flex items-end gap-3 h-24">
+<div class="flex-1 bg-primary rounded-t-xl" style="height: 85%;"></div>
+<div class="flex-1 bg-secondary rounded-t-xl" style="height: 70%;"></div>
+<div class="flex-1 bg-tertiary rounded-t-xl" style="height: 92%;"></div>
+<div class="flex-1 bg-primary-container rounded-t-xl" style="height: 78%;"></div>
+</div>
+<div class="flex justify-between text-[10px] font-label uppercase tracking-widest pt-2 text-on-surface-variant">
+<span>List.</span>
+<span>Speak.</span>
+<span>Read.</span>
+<span>Write.</span>
+</div>
+</div>
+<!-- Active Time -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/10 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-2xl bg-secondary-container/30 text-secondary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<h3 class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Learning Time</h3>
+<p class="font-headline text-3xl font-bold mt-1">12.5 <span class="text-lg font-medium">hrs</span></p>
+</div>
+<div class="space-y-2">
+<p class="text-xs text-on-surface-variant">Weekly Goal: 15h</p>
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[83%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Vocabulary Mastered -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl border border-outline-variant/10 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-2xl bg-tertiary-fixed/40 text-tertiary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">translate</span>
+</div>
+<h3 class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Vocabulary</h3>
+<p class="font-headline text-3xl font-bold mt-1">2,480</p>
+</div>
+<div class="flex items-center gap-2 text-secondary text-sm font-medium">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+124 words</span>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Feedback & Skills Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-6">
+<h3 class="font-headline text-2xl font-bold">AI Learning Insights</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Area 1 -->
+<div class="bg-primary text-on-primary p-6 rounded-3xl relative overflow-hidden group">
+<div class="relative z-10">
+<h4 class="font-headline text-lg font-bold mb-4">Strongest Skills</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">check_circle</span>
+<span class="text-sm">Contextual Inference</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">check_circle</span>
+<span class="text-sm">Complex Sentence Structures</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">check_circle</span>
+<span class="text-sm">Business Vocabulary</span>
+</li>
+</ul>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 scale-150 rotate-12">
+<span class="material-symbols-outlined text-[120px]">auto_awesome</span>
+</div>
+</div>
+<!-- Area 2 -->
+<div class="bg-surface-container-highest p-6 rounded-3xl">
+<h4 class="font-headline text-lg font-bold mb-4">Focus Areas</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary/10 text-tertiary flex-shrink-0 flex items-center justify-center font-bold">1</div>
+<div>
+<p class="font-bold text-sm">Phrasal Verbs</p>
+<p class="text-xs text-on-surface-variant">Review the "Taking Out" vs "Taking Off" exercise.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary/10 text-tertiary flex-shrink-0 flex items-center justify-center font-bold">2</div>
+<div>
+<p class="font-bold text-sm">Aural Distinctions</p>
+<p class="text-xs text-on-surface-variant">Improve 'th' vs 's' sound identification.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary/10 text-tertiary flex-shrink-0 flex items-center justify-center font-bold">3</div>
+<div>
+<p class="font-bold text-sm">Prepositional Phrases</p>
+<p class="text-xs text-on-surface-variant">Work on location-based connectors.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Achievement Badges -->
+<div class="space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="font-headline text-2xl font-bold">Achievements</h3>
+<button class="text-primary text-sm font-semibold">View All</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-4 rounded-2xl flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-tertiary-fixed text-on-tertiary-fixed rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<p class="text-xs font-bold leading-tight">7-Day Streak</p>
+</div>
+<div class="bg-surface-container p-4 rounded-2xl flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-secondary-fixed text-on-secondary-fixed rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<p class="text-xs font-bold leading-tight">Word Smith</p>
+</div>
+<div class="bg-surface-container p-4 rounded-2xl flex flex-col items-center text-center opacity-40">
+<div class="w-12 h-12 bg-surface-variant text-outline rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<p class="text-xs font-bold leading-tight">Chat Master</p>
+</div>
+<div class="bg-surface-container p-4 rounded-2xl flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary-fixed text-on-primary-fixed rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="text-xs font-bold leading-tight">B2 Certified</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Exercise Logs -->
+<section class="space-y-6">
+<h3 class="font-headline text-2xl font-bold">Recent Performance</h3>
+<div class="bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/10">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-[10px] font-label uppercase tracking-widest text-on-surface-variant">
+<tr>
+<th class="px-6 py-4">Exercise</th>
+<th class="px-6 py-4">Category</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4 text-right">Score</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">record_voice_over</span>
+<span class="font-semibold">Meeting Simulation</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm">Speaking</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Today, 2:40 PM</td>
+<td class="px-6 py-5 text-right font-headline font-bold text-secondary">92%</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">menu_book</span>
+<span class="font-semibold">Economist Article Review</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm">Reading</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Yesterday</td>
+<td class="px-6 py-5 text-right font-headline font-bold text-secondary">88%</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+<span class="font-semibold">Email Etiquette Draft</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm">Writing</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">2 days ago</td>
+<td class="px-6 py-5 text-right font-headline font-bold text-tertiary">65%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#ffffff]/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-8px_32px_rgba(27,27,36,0.06)] rounded-t-[1.5rem]">
+<a class="flex flex-col items-center justify-center text-[#1b1b24]/60 hover:bg-[#f5f2ff] px-4 py-2 rounded-2xl transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1b1b24]/60 hover:bg-[#f5f2ff] px-4 py-2 rounded-2xl transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Exercises</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1b1b24]/60 hover:bg-[#f5f2ff] px-4 py-2 rounded-2xl transition-all" href="#">
+<span class="material-symbols-outlined">record_voice_over</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1b1b24]/60 hover:bg-[#f5f2ff] px-4 py-2 rounded-2xl transition-all" href="#">
+<span class="material-symbols-outlined">track_changes</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Goals</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#e2dfff] text-[#3525cd] px-4 py-2 rounded-2xl scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Insights</span>
+</a>
+</nav>
+</body></html>

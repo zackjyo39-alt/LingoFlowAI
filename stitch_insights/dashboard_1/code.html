@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Atelier | Personal Learning Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e4e1ee",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-high": "#eae6f4",
+                        "tertiary": "#684000",
+                        "outline": "#777587",
+                        "surface-tint": "#4d44e3",
+                        "primary": "#3525cd",
+                        "inverse-on-surface": "#f3effc",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e1ee",
+                        "background": "#fcf8ff",
+                        "surface-container-low": "#f5f2ff",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "tertiary-container": "#885500",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface": "#fcf8ff",
+                        "primary-fixed": "#e2dfff",
+                        "on-primary-container": "#dad7ff",
+                        "on-secondary-fixed-variant": "#005047",
+                        "primary-container": "#4f46e5",
+                        "on-secondary-fixed": "#00201c",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#c3c0ff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#302f39",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#464555",
+                        "on-background": "#1b1b24",
+                        "on-tertiary-container": "#ffd4a4",
+                        "secondary-container": "#62fae3",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "secondary": "#006b5f",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c7c4d8",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-container": "#f0ecf9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#007165",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ffddb8",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "secondary-fixed": "#62fae3",
+                        "surface-bright": "#fcf8ff",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1b1b24",
+                        "surface-dim": "#dcd8e5"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf8ff;
+            color: #1b1b24;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-24 md:pb-0 md:pt-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#fcf8ff] flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="Close up of a professional woman profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAINAR1tr4brESBKGIFiannSAHGRxNVSc7JK6N29wAbr6_LoTleDNL68Ic159VhHQnGh6p-Sth18G5VnRgl9mjkmRXMAe7SruTGIrGTZVQeHYY9Y0m9m5uHycIW2H7IPc2gwiPvGhtnGj5O1Uxjw74VCtHO_oD5idcLbSmPOfLRC-Op3qYGgUtU-jMwSYSCp8V08PT6aBZw77JeaFVN1DUJhi3N__comZrGrlbnhUE9O2ZrjcOvcc4MZ36TgCXfu8WQjaHPC_0g39UC"/>
+</div>
+<div class="flex flex-col">
+<span class="text-[#3525cd] font-black text-xl font-headline tracking-tight leading-none">The Atelier</span>
+<span class="text-on-surface-variant text-[10px] font-label uppercase tracking-widest">Premium Learning</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#3525cd] hover:opacity-80 transition-opacity active:scale-95 duration-150">notifications</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-8">
+<!-- Welcome Section (Asymmetric Bento Grid Start) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+<!-- Hero Progress Card -->
+<div class="md:col-span-8 bg-gradient-to-br from-primary to-primary-container rounded-3xl p-8 text-white relative overflow-hidden flex flex-col justify-between min-h-[320px]">
+<div class="relative z-10">
+<h1 class="font-headline font-bold text-3xl mb-2">Good morning, Elena.</h1>
+<p class="text-on-primary-container/80 max-w-md">Your AI tutor has curated a specific path for your business meeting preparation today.</p>
+</div>
+<div class="mt-8 flex flex-wrap items-end justify-between gap-6 relative z-10">
+<div class="flex gap-8">
+<div class="flex flex-col">
+<span class="text-4xl font-headline font-extrabold">95<span class="text-xl font-medium opacity-70">%</span></span>
+<span class="text-[10px] uppercase tracking-widest font-label opacity-70">Daily Mastery</span>
+</div>
+<div class="flex flex-col">
+<span class="text-4xl font-headline font-extrabold">12</span>
+<span class="text-[10px] uppercase tracking-widest font-label opacity-70">Day Streak</span>
+</div>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-3xl font-bold font-headline hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-primary/20">
+                        Resume Session
+                    </button>
+</div>
+<!-- Abstract Decorative Element -->
+<div class="absolute -right-12 -top-12 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute right-12 bottom-0 w-48 h-48 bg-secondary-container/20 rounded-full blur-2xl"></div>
+</div>
+<!-- Circular Progress Tracker Card -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-3xl p-8 flex flex-col items-center justify-center text-center">
+<div class="relative w-40 h-40 flex items-center justify-center mb-6">
+<!-- SVG Circular Progress -->
+<svg class="w-full h-full -rotate-90">
+<circle class="text-surface-variant" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-secondary stroke-round" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="110" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-headline font-extrabold text-on-surface leading-none">45</span>
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-wider">Mins left</span>
+</div>
+</div>
+<h3 class="font-headline font-bold text-lg text-on-surface">Daily Goal</h3>
+<p class="text-on-surface-variant text-sm px-4">75% of your daily goal achieved. Almost there!</p>
+</div>
+</div>
+<!-- Today's Focus & AI Exercises -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+<!-- Today's Focus -->
+<div class="md:col-span-7 space-y-6">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-headline font-bold text-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                        Today's Focus
+                    </h2>
+<span class="text-primary text-sm font-medium hover:underline cursor-pointer">View Curriculum</span>
+</div>
+<div class="bg-surface-container-low rounded-3xl p-6 border-l-4 border-primary">
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 p-3 rounded-2xl">
+<span class="material-symbols-outlined text-primary">business_center</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg leading-tight">Business Meeting Vocabulary</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-1 rounded-full font-bold font-label uppercase">Priority</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Master high-stakes negotiation idioms and presentation transitions.</p>
+<div class="flex gap-2">
+<span class="text-[10px] font-label font-bold px-3 py-1 bg-white rounded-full text-on-surface-variant border border-outline-variant/20">15 MINS</span>
+<span class="text-[10px] font-label font-bold px-3 py-1 bg-white rounded-full text-on-surface-variant border border-outline-variant/20">VOCABULARY</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-3xl p-6">
+<div class="flex items-start gap-4">
+<div class="bg-secondary/10 p-3 rounded-2xl">
+<span class="material-symbols-outlined text-secondary">record_voice_over</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-lg leading-tight">Pronunciation Lab</h3>
+<p class="text-on-surface-variant text-sm mb-4">Focusing on "th" sounds and sentence stress in professional queries.</p>
+<div class="flex gap-2">
+<span class="text-[10px] font-label font-bold px-3 py-1 bg-white rounded-full text-on-surface-variant border border-outline-variant/20">10 MINS</span>
+<span class="text-[10px] font-label font-bold px-3 py-1 bg-white rounded-full text-on-surface-variant border border-outline-variant/20">SPEAKING</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Access AI Exercises -->
+<div class="md:col-span-5">
+<h2 class="font-headline font-bold text-xl mb-6 flex items-center gap-2">
+                    Quick Exercises
+                </h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-highest rounded-3xl p-5 hover:bg-primary-fixed transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary mb-3 block group-hover:scale-110 transition-transform">bolt</span>
+<h4 class="font-bold text-sm mb-1">Flash Quiz</h4>
+<p class="text-xs text-on-surface-variant">Rapid 2-min review</p>
+</div>
+<div class="bg-surface-container-highest rounded-3xl p-5 hover:bg-primary-fixed transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary mb-3 block group-hover:scale-110 transition-transform">psychology</span>
+<h4 class="font-bold text-sm mb-1">Grammar AI</h4>
+<p class="text-xs text-on-surface-variant">Contextual check</p>
+</div>
+<div class="bg-surface-container-highest rounded-3xl p-5 hover:bg-primary-fixed transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary mb-3 block group-hover:scale-110 transition-transform">forum</span>
+<h4 class="font-bold text-sm mb-1">Mock Chat</h4>
+<p class="text-xs text-on-surface-variant">Practice dialogue</p>
+</div>
+<div class="bg-surface-container-highest rounded-3xl p-5 hover:bg-primary-fixed transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary mb-3 block group-hover:scale-110 transition-transform">article</span>
+<h4 class="font-bold text-sm mb-1">Read-Along</h4>
+<p class="text-xs text-on-surface-variant">Comprehension focus</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Weekly Goals & Schedule -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<!-- Weekly Goal Status -->
+<div class="bg-surface-container-low rounded-3xl p-8">
+<h3 class="font-headline font-bold text-lg mb-6">Weekly Progress</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-end mb-1">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider font-label">Speaking Hours</span>
+<span class="text-sm font-bold text-primary">4.2 / 5h</span>
+</div>
+<div class="h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-[84%] rounded-full"></div>
+</div>
+<div class="flex justify-between items-end mt-6 mb-1">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider font-label">Words Mastered</span>
+<span class="text-sm font-bold text-primary">85 / 100</span>
+</div>
+<div class="h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[85%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Next Scheduled Lesson -->
+<div class="bg-white rounded-3xl p-8 shadow-[0_8px_32px_rgba(27,27,36,0.04)] md:col-span-2 flex flex-col md:flex-row gap-8 items-center">
+<div class="flex-1 w-full">
+<span class="text-[10px] font-label font-bold uppercase tracking-[0.2em] text-secondary mb-2 block">Upcoming Session</span>
+<h3 class="font-headline font-extrabold text-2xl text-on-surface mb-2">Live Workshop: Pitching Ideas</h3>
+<div class="flex items-center gap-6 mt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span class="text-sm font-medium">Tomorrow, Oct 24</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span class="text-sm font-medium">10:30 AM</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3 w-full md:w-auto">
+<div class="flex -space-x-3 mb-2 justify-center md:justify-start">
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="Male teacher profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmppNOpz-LYyQD9DxL7XcEf7gBOdVgD4q1bJPpeeABWA6JsOGoKkJMZDRy-w60bJsRHMqZNvr_PvxbaYMuCIWkbvAXMpv9Oq0NUEQNtEUqz1BNF8C-gYjIFnK1JFojhnmxMrB5sGWuTt_Dml1u3341mF5MjAOPPRGByBauhlC6e3V_OFaHmzABVQnQeJf1U1knzocSv023x3SHNrHo_q13Zk5dlbxkeNwHKNOEzV-ojeg_Pl3xhT04h9rjihJd114x6rzPrlRUEZvb"/>
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="Female student participant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5dQUr4JNPeJr2A5ISURrqa-kSGslWJMJ9vWXSjQRpTGo177p2EXGlRVc3eXL1BU4zTy10KulqtZb2x48oX5IYFZIrdZSlDtKKlQfZs0E_PtHV7Arex8L8LB6-JnE7xJyezJq9z-4fsvzzLjs_QUG7VxCCBe462n5PZQ5dgbx3vDFjDvnrg0gls-_5JOQ4Y9n5tdxbawCHnJt17zRyqGTqzaPEBdsuMtLj2IxnO3K67fTe5pDbaX9D4vGfPS2dnhHq7HBGnvfeXN7a"/>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-white flex items-center justify-center text-[10px] font-bold">+12</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 rounded-2xl font-bold font-headline text-sm hover:opacity-90 transition-all active:scale-95 whitespace-nowrap">Add to Calendar</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#ffffff]/80 backdrop-blur-xl flex justify-around items-center px-4 pb-6 pt-2 rounded-t-[1.5rem] shadow-[0_-8px_32px_rgba(27,27,36,0.06)] md:hidden">
+<a class="flex flex-col items-center justify-center bg-[#e2dfff] text-[#3525cd] rounded-2xl px-4 py-2 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1b1b24]/60 px-4 py-2 hover:bg-[#f5f2ff] rounded-2xl" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Exercises</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1b1b24]/60 px-4 py-2 hover:bg-[#f5f2ff] rounded-2xl" href="#">
+<span class="material-symbols-outlined">record_voice_over</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Practice</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1b1b24]/60 px-4 py-2 hover:bg-[#f5f2ff] rounded-2xl" href="#">
+<span class="material-symbols-outlined">track_changes</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Goals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1b1b24]/60 px-4 py-2 hover:bg-[#f5f2ff] rounded-2xl" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Insights</span>
+</a>
+</nav>
+<!-- Floating Action Button (FAB) - Smart Contextual -->
+<button class="fixed right-6 bottom-32 md:bottom-12 bg-primary text-on-primary w-14 h-14 rounded-3xl shadow-2xl flex items-center justify-center group hover:scale-105 transition-all active:scale-95 z-40">
+<span class="material-symbols-outlined text-3xl">mic</span>
+<!-- Tooltip -->
+<span class="absolute right-full mr-4 bg-on-surface text-surface text-xs font-bold py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Speak to AI Tutor
+        </span>
+</button>
+</body></html>

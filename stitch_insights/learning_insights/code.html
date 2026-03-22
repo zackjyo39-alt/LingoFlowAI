@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LingoFlow AI - Learning Insights</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#f0ecf9",
+              "inverse-on-surface": "#f3effc",
+              "outline": "#777587",
+              "secondary-container": "#62fae3",
+              "secondary": "#006b5f",
+              "on-primary-fixed-variant": "#3323cc",
+              "error-container": "#ffdad6",
+              "surface-dim": "#dcd8e5",
+              "surface-bright": "#fcf8ff",
+              "tertiary-fixed": "#ffddb8",
+              "on-tertiary-fixed": "#2a1700",
+              "tertiary": "#684000",
+              "surface-container-high": "#eae6f4",
+              "primary-fixed-dim": "#c3c0ff",
+              "tertiary-container": "#885500",
+              "tertiary-fixed-dim": "#ffb95f",
+              "on-primary-container": "#dad7ff",
+              "secondary-fixed-dim": "#3cddc7",
+              "error": "#ba1a1a",
+              "secondary-fixed": "#62fae3",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "inverse-primary": "#c3c0ff",
+              "primary": "#3525cd",
+              "primary-container": "#4f46e5",
+              "on-surface-variant": "#464555",
+              "outline-variant": "#c7c4d8",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#e4e1ee",
+              "surface": "#fcf8ff",
+              "on-tertiary-container": "#ffd4a4",
+              "on-tertiary-fixed-variant": "#653e00",
+              "surface-container-low": "#f5f2ff",
+              "background": "#fcf8ff",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#0f0069",
+              "surface-tint": "#4d44e3",
+              "on-error-container": "#93000a",
+              "inverse-surface": "#302f39",
+              "on-background": "#1b1b24",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#00201c",
+              "on-secondary-container": "#007165",
+              "primary-fixed": "#e2dfff",
+              "surface-variant": "#e4e1ee",
+              "on-surface": "#1b1b24",
+              "on-secondary-fixed-variant": "#005047"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#fcf8ff] dark:bg-slate-950 flex justify-between items-center w-full px-6 py-4 docked full-width top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling young professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAkDCVeKphCBE8HBy7FFcL7_dZo_OtKLeo0e47n46canrCm2Ljm2IjxK3DXb57cwCN2cLV1jjf-7fRWr7wbn0IIdKiNgYnM74Dt-sdGj5A7jvdFbEOACAZwISjHeUBLzGXwZu2lMPRFI1pP2MYANJspGNlDprSjrR0TGI9dlHQOClBhlJQt4c7Na81yDcf-sywj6TIP10DSvkVfD_UYOIxLl1s9YO8qrnHlqwa7gNafPRasdFk-W0FQU0XwROub6eu2YpgSC8MdCrr"/>
+</div>
+<h1 class="font-headline font-extrabold text-[#3525cd] dark:text-[#4f46e5] tracking-tight text-xl">LingoFlow AI</h1>
+</div>
+<button class="text-[#3525cd] dark:text-[#4f46e5] hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+</button>
+</header>
+<main class="max-w-5xl mx-auto px-6 pt-8 space-y-12">
+<!-- Hero Section: Progress Achievement -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+<div class="md:col-span-8 space-y-4">
+<span class="font-label text-xs uppercase tracking-widest text-primary font-bold">Performance Summary</span>
+<h2 class="font-headline text-4xl font-bold text-on-surface">Your Learning Velocity is <span class="text-primary italic">Peaking</span></h2>
+<p class="text-on-surface-variant text-lg max-w-xl">You've mastered 42 new phrases this week. Your consistency is in the top 5% of global learners.</p>
+</div>
+<div class="md:col-span-4 flex justify-end">
+<div class="relative bg-surface-container-lowest p-8 rounded-3xl w-full text-center border-b-4 border-primary/10">
+<div class="font-headline text-6xl font-extrabold text-primary">95%</div>
+<div class="font-label text-xs uppercase tracking-tighter text-outline mt-2 font-semibold">Weekly Goal Reached</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid for Core Metrics -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Skill Radar / Distribution -->
+<div class="md:col-span-2 bg-surface-container-low p-8 rounded-3xl space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="font-headline font-bold text-xl">Skill Distribution</h3>
+<span class="material-symbols-outlined text-primary" data-icon="hub">hub</span>
+</div>
+<div class="space-y-6">
+<!-- Speaking -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-medium">
+<span>Speaking</span>
+<span class="text-primary">82%</span>
+</div>
+<div class="h-3 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<!-- Listening -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-medium">
+<span>Listening</span>
+<span class="text-secondary">94%</span>
+</div>
+<div class="h-3 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 94%"></div>
+</div>
+</div>
+<!-- Reading -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-medium">
+<span>Reading</span>
+<span class="text-tertiary">65%</span>
+</div>
+<div class="h-3 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Vocab Mastery Counter -->
+<div class="md:col-span-1 bg-surface-container-lowest p-8 rounded-3xl flex flex-col justify-between border-t-8 border-tertiary-fixed">
+<div class="bg-tertiary-fixed w-12 h-12 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed" data-icon="book_5">book_5</span>
+</div>
+<div class="mt-8">
+<div class="text-4xl font-headline font-bold text-on-surface">1,284</div>
+<div class="text-sm text-outline font-medium">Active Vocabulary</div>
+</div>
+<div class="mt-4 flex items-center gap-1 text-secondary font-bold text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+12 today</span>
+</div>
+</div>
+<!-- Weakness Analysis -->
+<div class="md:col-span-1 bg-primary text-on-primary p-8 rounded-3xl flex flex-col">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-3xl" data-icon="psychology">psychology</span>
+<span class="bg-on-primary/20 px-2 py-1 rounded text-[10px] font-bold uppercase">AI Insight</span>
+</div>
+<div class="mt-auto pt-8">
+<h4 class="font-headline font-bold text-lg leading-tight">Weakness Analysis</h4>
+<p class="text-sm text-primary-fixed mt-4 leading-relaxed">Focus on <span class="underline decoration-secondary-fixed">Prepositions</span> in business contexts during your next session.</p>
+</div>
+</div>
+</section>
+<!-- Historical Trend Graph -->
+<section class="bg-surface-container-low p-8 rounded-3xl">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
+<div>
+<h3 class="font-headline font-bold text-2xl">Activity History</h3>
+<p class="text-outline text-sm">Engagement based on token usage and minutes spent.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary text-sm font-bold">Tokens</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant text-sm font-bold">Time</button>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-2 px-4 relative">
+<!-- Vertical Axis Markers -->
+<div class="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-[10px] text-outline font-bold uppercase tracking-widest opacity-30">
+<span>10k</span>
+<span>5k</span>
+<span>0</span>
+</div>
+<!-- Mock Graph Bars -->
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[40%] hover:bg-primary transition-colors cursor-pointer group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Mon</div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t-xl h-[65%] hover:bg-primary transition-colors cursor-pointer group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Tue</div>
+</div>
+<div class="flex-1 bg-primary/15 rounded-t-xl h-[50%] hover:bg-primary transition-colors cursor-pointer group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Wed</div>
+</div>
+<div class="flex-1 bg-primary/40 rounded-t-xl h-[85%] hover:bg-primary transition-colors cursor-pointer group relative border-t-4 border-secondary-fixed">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Thu</div>
+</div>
+<div class="flex-1 bg-primary/25 rounded-t-xl h-[60%] hover:bg-primary transition-colors cursor-pointer group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Fri</div>
+</div>
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[30%] hover:bg-primary transition-colors cursor-pointer group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Sat</div>
+</div>
+<div class="flex-1 bg-primary rounded-t-xl h-[95%] hover:bg-primary transition-colors cursor-pointer group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Sun</div>
+</div>
+</div>
+<div class="flex justify-between mt-6 px-4 text-[10px] font-bold text-outline tracking-widest uppercase">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span>Sun</span>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="bg-secondary-container p-8 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative">
+<div class="relative z-10 text-center md:text-left">
+<h3 class="font-headline font-bold text-2xl text-on-secondary-container">Ready to bridge the gaps?</h3>
+<p class="text-secondary font-medium mt-2">Personalized scenario generated based on your weaknesses.</p>
+</div>
+<button class="relative z-10 bg-secondary text-on-secondary px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-transform flex items-center gap-2 shadow-lg shadow-secondary/20">
+                Start Focused Practice
+                <span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</button>
+<!-- Decorative circle -->
+<div class="absolute -right-16 -bottom-16 w-64 h-64 bg-secondary/5 rounded-full"></div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-[#c7c4d8]/20 shadow-[0_-8px_32px_rgba(27,27,36,0.06)] z-50 rounded-t-[1.5rem]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-[#3525cd] dark:hover:text-[#4f46e5]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Home</span>
+</a>
+<!-- Practice -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-[#3525cd] dark:hover:text-[#4f46e5]" href="#">
+<span class="material-symbols-outlined" data-icon="model_training">model_training</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Practice</span>
+</a>
+<!-- Scenarios -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-[#3525cd] dark:hover:text-[#4f46e5]" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Scenarios</span>
+</a>
+<!-- Goals -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-[#3525cd] dark:hover:text-[#4f46e5]" href="#">
+<span class="material-symbols-outlined" data-icon="flag">flag</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Goals</span>
+</a>
+<!-- Insights (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#e2dfff] dark:bg-[#3525cd]/30 text-[#3525cd] dark:text-[#e2dfff] rounded-2xl px-4 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wider uppercase mt-1">Insights</span>
+</a>
+</nav>
+</body></html>

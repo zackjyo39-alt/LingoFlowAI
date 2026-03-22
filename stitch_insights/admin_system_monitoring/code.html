@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LingoFlow AI - Admin Console</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#f0ecf9",
+                        "inverse-on-surface": "#f3effc",
+                        "outline": "#777587",
+                        "secondary-container": "#62fae3",
+                        "secondary": "#006b5f",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dcd8e5",
+                        "surface-bright": "#fcf8ff",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-tertiary-fixed": "#2a1700",
+                        "tertiary": "#684000",
+                        "surface-container-high": "#eae6f4",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "tertiary-container": "#885500",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-primary-container": "#dad7ff",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#62fae3",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#c3c0ff",
+                        "primary": "#3525cd",
+                        "primary-container": "#4f46e5",
+                        "on-surface-variant": "#464555",
+                        "outline-variant": "#c7c4d8",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e4e1ee",
+                        "surface": "#fcf8ff",
+                        "on-tertiary-container": "#ffd4a4",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container-low": "#f5f2ff",
+                        "background": "#fcf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-tint": "#4d44e3",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#302f39",
+                        "on-background": "#1b1b24",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#00201c",
+                        "on-secondary-container": "#007165",
+                        "primary-fixed": "#e2dfff",
+                        "surface-variant": "#e4e1ee",
+                        "on-surface": "#1b1b24",
+                        "on-secondary-fixed-variant": "#005047"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- NavigationDrawer (Shared Component) -->
+<aside class="fixed inset-y-0 left-0 z-[60] flex flex-col p-4 bg-[#fcf8ff] dark:bg-slate-950 h-full w-80 rounded-r-3xl shadow-2xl overflow-hidden">
+<!-- Header Profile -->
+<div class="flex items-center gap-4 mb-8 px-2">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img alt="Admin Avatar" data-alt="Professional admin avatar profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJpxgN5qj1HpQ_W10ePYBPpT_3eD6oCxQk32DkAdqBzertyP6wDRAEBFZK8ceuIh75G29oNSrVSHJDiTVKFJMK0kqy_hSKKwl4XdFZmyL4wE8BzZZb8bpXSWrtz-kZZ6fJdvPhmDETouQLmYBoxh-9wa5dzgQSw6FTyPk99MBMTGoC0WC-TMCnaxRcsHp9s6d6e9cZZXD7w7kvk6cI3UAHEhYUSqyHFyAM51EGiZYFKlTC2TCLfSWazoNrv2aud3CWVCH5GCx2VnQ3"/>
+</div>
+<div>
+<h2 class="font-headline font-black text-primary leading-tight">Admin Console</h2>
+<p class="text-xs text-outline font-medium uppercase tracking-wider">System Controller</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-[#f5f2ff] mx-2 rounded-xl transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-headline font-semibold">Users &amp; Quotas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-white rounded-xl mx-2 transition-all duration-300 ease-in-out shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">memory</span>
+<span class="font-headline font-semibold">LLM Config</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-[#f5f2ff] mx-2 rounded-xl transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">toll</span>
+<span class="font-headline font-semibold">Token Usage</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-[#f5f2ff] mx-2 rounded-xl transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-headline font-semibold">System Logs</span>
+</a>
+</nav>
+<!-- Footer -->
+<div class="mt-auto px-4 py-2 border-t border-outline-variant/20">
+<p class="text-[10px] text-outline font-medium tracking-widest uppercase">v1.0.2</p>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-80 min-h-screen p-8 lg:p-12">
+<!-- TopAppBar (Shared Component Implementation) -->
+<header class="flex justify-between items-center w-full mb-12">
+<div class="space-y-1">
+<h1 class="text-3xl font-headline font-extrabold text-primary tracking-tight">LingoFlow AI</h1>
+<p class="text-on-surface-variant font-medium">Global LLM Provider Hub</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-primary hover:opacity-80 transition-opacity active:scale-95">
+<span class="material-symbols-outlined text-2xl">monitoring</span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary-fixed overflow-hidden">
+<img alt="User profile photo" data-alt="Small circular admin profile placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw_HOj7OvaMAxOvzdEc4oQTtoIB754ARAXG2SGxq2VeC9ejOkw22QhLZJj_NhptsqcdT3vVXDyzbQI-SuLNTW5OjdYMiu5XYW26Xlfhq8P5glqoe7zLZSVOgdituA2_JRR7NNTKXCJOKRFjnpaoCKC-fVUaamTNrm4hpAvm55OVVEUWFJdb9-cQr1YpaVplPEq18LV5VrS3KwaB-KwBBKDctdqlyyiizEIdFm_qODgCIE5WB9AwHYkIoRDCujbgkcP9W20vQT1CBEH"/>
+</div>
+</div>
+</header>
+<!-- Monitoring Section: Dashboard Bento Grid -->
+<!-- Summary Stats Section -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- System Status Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgba(27,27,36,0.03)] border border-outline-variant/10 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase font-bold tracking-widest">System Status</p>
+<h3 class="font-headline text-xl font-extrabold text-on-surface">All Operational</h3>
+</div>
+</div>
+<!-- Total Users Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgba(27,27,36,0.03)] border border-outline-variant/10 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase font-bold tracking-widest">Total Users</p>
+<h3 class="font-headline text-xl font-extrabold text-on-surface">2,842</h3>
+</div>
+</div>
+<!-- Active Sessions Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgba(27,27,36,0.03)] border border-outline-variant/10 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase font-bold tracking-widest">Active Sessions</p>
+<h3 class="font-headline text-xl font-extrabold text-on-surface">124</h3>
+</div>
+</div>
+</section><section class="grid grid-cols-12 gap-6 mb-12">
+<!-- Main Chart Card -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-[0_8px_32px_rgba(27,27,36,0.04)]">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Token Velocity &amp; Expenditure</h3>
+<p class="text-sm text-outline">Real-time aggregate across all nodes</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold rounded-full">LIVE</span>
+</div>
+</div>
+<!-- Mock Chart Visualization -->
+<div class="h-64 flex items-end gap-1 w-full group relative">
+<div class="w-full h-40 bg-primary/10 rounded-t-lg hover:bg-primary/20 transition-colors" style="height: 45%;"></div>
+<div class="w-full h-40 bg-primary/10 rounded-t-lg hover:bg-primary/20 transition-colors" style="height: 65%;"></div>
+<div class="w-full h-40 bg-primary/10 rounded-t-lg hover:bg-primary/20 transition-colors" style="height: 55%;"></div>
+<div class="w-full h-40 bg-primary/10 rounded-t-lg hover:bg-primary/20 transition-colors" style="height: 85%;"></div>
+<div class="w-full h-40 bg-primary/10 rounded-t-lg hover:bg-primary/20 transition-colors" style="height: 75%;"></div>
+<div class="w-full h-40 bg-primary/10 rounded-t-lg hover:bg-primary/20 transition-colors" style="height: 95%;"></div>
+<div class="w-full h-40 bg-primary/10 rounded-t-lg hover:bg-primary/20 transition-colors" style="height: 60%;"></div>
+<div class="w-full h-40 bg-primary/10 rounded-t-lg hover:bg-primary/20 transition-colors" style="height: 40%;"></div>
+<div class="w-full h-40 bg-primary/10 rounded-t-lg hover:bg-primary/20 transition-colors" style="height: 70%;"></div>
+<div class="w-full h-40 bg-primary rounded-t-lg" style="height: 80%;"></div>
+<!-- Chart Overlay Tooltip Mock -->
+<div class="absolute top-0 right-10 bg-inverse-surface text-inverse-on-surface px-3 py-2 rounded-lg text-xs font-medium">
+                        $142.40 / 1.2M Tokens
+                    </div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-outline font-bold tracking-widest uppercase">
+<span>08:00</span>
+<span>12:00</span>
+<span>16:00</span>
+<span>20:00</span>
+<span>Current</span>
+</div>
+</div>
+<!-- Cost Breakdown Card -->
+<div class="col-span-12 lg:col-span-4 bg-primary text-on-primary rounded-xl p-8 relative overflow-hidden">
+<div class="relative z-10 h-full flex flex-col">
+<h3 class="font-headline text-xl font-bold mb-2">Total Monthly Fees</h3>
+<p class="text-4xl font-headline font-extrabold mb-8 tracking-tighter">$12,482.00</p>
+<div class="space-y-4 flex-1">
+<div class="flex justify-between items-center text-sm">
+<span class="opacity-80">OpenAI GPT-4o</span>
+<span class="font-bold">$8,240</span>
+</div>
+<div class="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full" style="width: 65%;"></div>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="opacity-80">Claude 3.5 Sonnet</span>
+<span class="font-bold">$4,242</span>
+</div>
+<div class="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-fixed h-full" style="width: 35%;"></div>
+</div>
+</div>
+<button class="mt-6 w-full py-3 bg-white/10 hover:bg-white/20 transition-colors rounded-xl text-sm font-bold border border-white/10 backdrop-blur-md">
+                        Download Report
+                    </button>
+</div>
+<!-- Decorative glass effect circle -->
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary-container rounded-full blur-3xl opacity-50"></div>
+</div>
+</section>
+<!-- Providers Header -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline text-2xl font-extrabold text-on-surface">LLM Providers</h2>
+<p class="text-on-surface-variant">Manage active model connections and API priorities</p>
+</div>
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-xl font-bold shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity active:scale-95">
+<span class="material-symbols-outlined text-lg">add</span>
+                Add New Provider
+            </button>
+</div>
+<!-- Provider Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Provider Card: OpenAI -->
+<div class="bg-surface-container-lowest rounded-xl p-6 transition-all hover:translate-y-[-4px]">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#f0f0f0] rounded-lg flex items-center justify-center">
+<img alt="OpenAI Logo" data-alt="OpenAI brand logo placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_KPGl5gNLoY2w9kcbpgn6kwEqnZ33G-o5R1AnpXWmsNKoDNEYYIyASvfXkk2Md6NEgSqCrdWuJCz7Sc8RHM6CsyqimmK9CfHjCzWW5zmEOEKv_kxD0gZZ84WcGjScou4W1_tyFnbTRQX89mELmBq5PZr_P0l2F7zMfcseF83WEkHc3r5SpCuwP6bFaGYSJFffkyrKJr0sffo9uf2n1H5ihFvO21At-BgvOIAGwsntr-vYHkh39VDvszw8rt9x7JRBwmowU2ujeKXW"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">OpenAI</h4>
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">gpt-4o-latest</p>
+</div>
+</div>
+<span class="flex h-3 w-3 rounded-full bg-secondary"></span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-lg">
+<p class="text-[10px] text-outline uppercase font-bold mb-1">Status</p>
+<p class="text-sm font-bold text-on-surface">Healthy</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<p class="text-[10px] text-outline uppercase font-bold mb-1">Latency</p>
+<p class="text-sm font-bold text-on-surface">240ms</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 py-2 bg-surface-container-highest text-on-surface text-xs font-bold rounded-lg hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">key</span>
+                        API Keys
+                    </button>
+<button class="p-2 bg-surface-container-low text-primary rounded-lg hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+<!-- Provider Card: Anthropic -->
+<div class="bg-surface-container-lowest rounded-xl p-6 transition-all hover:translate-y-[-4px]">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#f9f5f0] rounded-lg flex items-center justify-center">
+<img alt="Anthropic Logo" data-alt="Anthropic brand logo placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfGlmQrtSEtBlQ_OEyrAKzGHLvVI5nvvkYQQYIRuHjR_qUNMo3j_yNrHImVwgXwGGMEKa8z9QhFxE0ME0LL06ci5q_8eHlztqQg9ikO0qz89j6Y7DOvc50EoJpHB47kA7vZ-QuW6r-DBPfxSS_RoRfflrdgzPcqxkW8YIwhw7e7cGVYIhmsSQu_hiSHUKq5hhJzHz0tjt0cuOiG2rV47uN1xXvnnV1ekBfwxIWNwgnBdGd69iAhge91ygEUeey5JWUkYpsH1VFWvdb"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Anthropic</h4>
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">claude-3-5-sonnet</p>
+</div>
+</div>
+<span class="flex h-3 w-3 rounded-full bg-secondary"></span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-lg">
+<p class="text-[10px] text-outline uppercase font-bold mb-1">Status</p>
+<p class="text-sm font-bold text-on-surface">Healthy</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<p class="text-[10px] text-outline uppercase font-bold mb-1">Latency</p>
+<p class="text-sm font-bold text-on-surface">412ms</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 py-2 bg-surface-container-highest text-on-surface text-xs font-bold rounded-lg hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">key</span>
+                        API Keys
+                    </button>
+<button class="p-2 bg-surface-container-low text-primary rounded-lg hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+<!-- Provider Card: Google Gemini (Disabled Example) -->
+<div class="bg-surface-container rounded-xl p-6 opacity-60 border border-outline-variant/30">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-[#eef2ff] rounded-lg flex items-center justify-center">
+<img alt="Google Logo" data-alt="Google AI brand logo placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4peJoLFfHxZ2e70jh1tHlakuF3VxGHc_1WW4ec13nPIFsDONHEe5ka21QPeMgSdxoycjOULxecugr-nPbEfty41t0C4Vje40XZAModUEQ9i97LGYPpE2-7BcqztZHSnQn9bp7iNNXtwslqQ23fkMQCKAn8bXgA96sGuIEZn96UsFA0qEVuYb1p52oHA-M8VR8DxhNqoSAjXRpkMXF1PuF6RvsBY7l58eqs2GVYASAfV6IN6SjvkNpfmq8vc3FkVugaAr57mbK6GI1"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Google AI</h4>
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">gemini-1.5-pro</p>
+</div>
+</div>
+<span class="flex h-3 w-3 rounded-full bg-outline"></span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-lg">
+<p class="text-[10px] text-outline uppercase font-bold mb-1">Status</p>
+<p class="text-sm font-bold text-on-surface">Inactive</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<p class="text-[10px] text-outline uppercase font-bold mb-1">Latency</p>
+<p class="text-sm font-bold text-on-surface">--</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 py-2 bg-primary/10 text-primary text-xs font-bold rounded-lg hover:bg-primary/20 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">bolt</span>
+                        Enable Node
+                    </button>
+</div>
+</div>
+</div>
+<!-- Real-time Cost Breakdown Table -->
+<section class="mt-12 bg-surface-container-low rounded-2xl overflow-hidden">
+<div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+<h3 class="font-headline font-bold text-on-surface">Per-User Consumption Breakdown</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-white rounded-lg transition-colors"><span class="material-symbols-outlined text-outline">search</span></button>
+<button class="p-2 hover:bg-white rounded-lg transition-colors"><span class="material-symbols-outlined text-outline">filter_list</span></button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-[10px] font-bold text-outline uppercase tracking-widest">
+<th class="px-6 py-4">User Identity</th>
+<th class="px-6 py-4">Primary Model</th>
+<th class="px-6 py-4">Tokens (24h)</th>
+<th class="px-6 py-4">Est. Cost</th>
+<th class="px-6 py-4">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-white/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed-dim"></div>
+<span class="font-medium text-sm">alex.chen@corp.com</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm">GPT-4o</td>
+<td class="px-6 py-4 text-sm font-mono">24,502</td>
+<td class="px-6 py-4 text-sm font-bold">$0.36</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-secondary-container/50 text-on-secondary-container text-[10px] font-bold rounded">NORMAL</span>
+</td>
+</tr>
+<tr class="hover:bg-white/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim"></div>
+<span class="font-medium text-sm">m.rodriquez@dev.io</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm">Claude 3.5</td>
+<td class="px-6 py-4 text-sm font-mono">112,040</td>
+<td class="px-6 py-4 text-sm font-bold">$1.68</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold rounded">HIGH USAGE</span>
+</td>
+</tr>
+<tr class="hover:bg-white/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-outline-variant"></div>
+<span class="font-medium text-sm">sarah.j@enterprise.com</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm">GPT-4o</td>
+<td class="px-6 py-4 text-sm font-mono">1,240,400</td>
+<td class="px-6 py-4 text-sm font-bold text-error">$18.60</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-error-container text-on-error-container text-[10px] font-bold rounded">QUOTA WARNING</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-white/30 text-center">
+<button class="text-xs font-bold text-primary hover:underline">View All Active Sessions</button>
+</div>
+</section>
+</main>
+<!-- Contextual FAB (Hidden on this administrative screen per rules, but prepared if needed for mobile) -->
+<!-- Suppressed: Primary action 'Add' is already in header for better information density -->
+</body></html>

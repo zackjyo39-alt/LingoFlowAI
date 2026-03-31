@@ -1,0 +1,15 @@
+{
+  "name": "lingoflowai",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "mobile:start": "npm run start --workspace @lingoflow/mobile",
+    "mobile:android": "npm run android --workspace @lingoflow/mobile",
+    "mobile:ios": "npm run ios --workspace @lingoflow/mobile",
+    "mobile:typecheck": "npm run typecheck --workspace @lingoflow/mobile",
+    "typecheck": "npm run mobile:typecheck"
+  }
+}
